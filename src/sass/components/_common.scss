@@ -4,8 +4,12 @@ body {
   font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
-  color: $main-color;
+  line-height: 0.74;
+  //   color: $main-color;
+}
+
+a {
+  text-decoration: none;
 }
 
 ul {

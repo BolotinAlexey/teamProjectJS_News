@@ -1,0 +1,33 @@
+// HEADER
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.logo {
+  @include font(42px, 1.36, 700);
+  color: $dark-theme;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__link {
+  @include font(18px, 1.39, 700);
+  color: $dark-theme;
+}
+
+.button-menu {
+  //   position: absolute;
+
+  &.js-open {
+    position: fixed;
+  }
+}
