@@ -11,14 +11,40 @@
       </ul>
     </nav>
     <div class="search">
-      <input class="search__input" type="search" name="" id="" />
-      <svg class="search__icon" width="15" height="15">
-        <use href="./images/sprite.svg#search"></use>
-      </svg>
+      <input
+        class="search__input"
+        type="search"
+        placeholder="Search"
+        name=""
+        id=""
+      />
+      <button class="search__btn">
+        <svg class="search__icon icon" width="15" height="15">
+          <use href="./images/sprite.svg#search"></use>
+        </svg>
+      </button>
     </div>
     <div class="checkbox">
       <input type="checkbox__input" name="" id="" />
     </div>
-    <button class="button-menu">#</button>
+    <button class="menu__btn-burger">
+      <svg class="menu__icon icon" width="24" height="24">
+        <use href="./images/sprite.svg#menu"></use>
+      </svg>
+    </button>
+  </div>
+
+  <!--------- mobile menu ---------->
+  <div class="menu is-hidden">
+    <div class="menu__container container">
+      <div class="menu__header">
+        <span class="logo">News</span>
+        <button class="menu__btn">
+          <svg class="menu__icon-cross icon" width="24" height="24">
+            <use href="./images/sprite.svg#x"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
   </div>
 </header>

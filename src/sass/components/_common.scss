@@ -26,6 +26,12 @@ button {
   //   cursor: url(./../images/header/header-cursor.png) 0 0, auto;
   cursor: pointer;
   border: none;
+  background-color: transparent;
+}
+
+.icon {
+  color: currentColor;
+  stroke: currentColor;
 }
 
 .visually-hidden {
@@ -47,6 +53,10 @@ button {
   padding-right: $padding;
   margin-left: auto;
   margin-right: auto;
+
+  @include mobile() {
+    max-width: $mobile;
+  }
 
   @include tablet() {
     max-width: $tablet;
