@@ -33,18 +33,48 @@
       </svg>
     </button>
   </div>
+</header>
 
-  <!--------- mobile menu ---------->
-  <div class="menu is-hidden">
-    <div class="menu__container container">
+<!--------- mobile menu ---------->
+<div class="menu is-hidden">
+  <div class="menu__container">
+    <div class="menu-top">
       <div class="menu__header">
         <span class="logo">News</span>
-        <button class="menu__btn">
+        <button class="menu__btn-cross">
           <svg class="menu__icon-cross icon" width="24" height="24">
             <use href="./images/sprite.svg#x"></use>
           </svg>
         </button>
       </div>
+      <ul class="menu__nav">
+        <li class="menu__item">
+          <a href="" class="menu__link">Home</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__link">Favorite</a>
+        </li>
+        <li class="menu__item">
+          <a href="" class="menu__link">Read</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- switcher -->
+    <div class="switcher">
+      <div class="switcher__thumb">
+        <svg class="icon" width="18" height="18">
+          <use href="./images/sprite.svg#sun"></use>
+        </svg>
+      </div>
+      <div class="switcher__thumb">
+        <div class="disc"></div>
+      </div>
+      <div class="switcher__thumb">
+        <svg class="icon" width="16" height="16">
+          <use href="./images/sprite.svg#moon"></use>
+        </svg>
+      </div>
     </div>
   </div>
-</header>
+</div>
