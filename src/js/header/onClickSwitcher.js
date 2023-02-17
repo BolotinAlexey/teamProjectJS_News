@@ -1,4 +1,6 @@
-export default function onClickSwitcher(e) {
-  console.log(e.currentTarget);
-  body.toggle('isDark');
+// ---- switch handler ------
+export default function onClickSwitcher(ref) {
+  ref.classList.toggle('isDark');
+  const isDark = localStorage.getItem('isDark');
+  localStorage.setItem('isDark', isDark ? '' : true);
 }

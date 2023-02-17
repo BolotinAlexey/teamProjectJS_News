@@ -39,7 +39,7 @@
 <div class="menu is-hidden">
   <div class="menu__container">
     <div class="menu-top">
-      <div class="menu__header">
+      <div class="menu__header left-right-paddings">
         <span class="logo">News</span>
         <button class="menu__btn-cross">
           <svg class="menu__icon-cross icon" width="24" height="24">
@@ -48,20 +48,52 @@
         </button>
       </div>
       <ul class="menu__nav">
-        <li class="menu__item">
-          <a href="" class="menu__link">Home</a>
+        <li class="menu__item left-right-paddings current">
+          <a href="" class="menu__link">
+            <div class="menu__thumb">
+              <svg class="menu__item__icon" width="18" height="18">
+                <use href="./images/sprite.svg#home"></use>
+              </svg>
+            </div>
+            <span class="menu__text">Home</span>
+
+            <svg class="menu__arrow" width="8" height="14">
+              <use href="./images/sprite.svg#arrow-right"></use>
+            </svg>
+          </a>
         </li>
-        <li class="menu__item">
-          <a href="" class="menu__link">Favorite</a>
+        <li class="menu__item left-right-paddings">
+          <a class="menu__link">
+            <div class="menu__thumb">
+              <svg class="menu__item__icon" width="18" height="18">
+                <use href="./images/sprite.svg#heart"></use>
+              </svg>
+            </div>
+            <span class="menu__text">Favorite</span>
+            <svg class="menu__arrow" width="8" height="14">
+              <use href="./images/sprite.svg#arrow-right"></use>
+            </svg>
+          </a>
         </li>
-        <li class="menu__item">
-          <a href="" class="menu__link">Read</a>
+        <li class="menu__item left-right-paddings">
+          <a href="" class="menu__link">
+            <div class="menu__thumb">
+              <svg class="menu__item__icon" width="18" height="18">
+                <use href="./images/sprite.svg#book-open"></use>
+              </svg>
+            </div>
+
+            <span class="menu__text">Read</span>
+            <svg class="menu__arrow" width="8" height="14">
+              <use href="./images/sprite.svg#arrow-right"></use>
+            </svg>
+          </a>
         </li>
       </ul>
     </div>
 
     <!------- switcher ------->
-    <div class="switcher">
+    <div class="switcher left-right-paddings">
       <div class="switcher__thumb sun">
         <svg class="icon" width="18" height="18">
           <use href="./images/sprite.svg#sun"></use>

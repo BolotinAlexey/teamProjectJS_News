@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
-    <symbol id="arrow-bottom" viewBox="0 0 32 32">
+    <symbol id="arrow-top" viewBox="0 0 32 32">
       <path d="M3.76 25.143 0 21.664 16 6.858l16 14.806-3.76 3.479L16 13.841 3.76 25.143z"/>
     </symbol>
     <symbol id="arrow-down" viewBox="0 0 32 32">
       <path d="M3.76 6.857 0 10.336l16 14.806 16-14.806-3.76-3.479L16 18.159 3.76 6.857z"/>
     </symbol>
     <symbol id="book-open" viewBox="0 0 32 32">
-      <path stroke="#f4f4f4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778" d="M2.667 4h8A5.332 5.332 0 0 1 16 9.333V28a4.003 4.003 0 0 0-4-4H2.667V4z"/>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778" d="M2.667 4h8A5.332 5.332 0 0 1 16 9.333V28a4.003 4.003 0 0 0-4-4H2.667V4z"/>
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.778" d="M29.333 4h-8A5.334 5.334 0 0 0 16 9.333V28a4.003 4.003 0 0 1 4-4h9.333V4z"/>
     </symbol>
     <symbol id="calendar" viewBox="0 0 32 32">
@@ -40,6 +40,9 @@
     </symbol>
     <symbol id="x" viewBox="0 0 32 32">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M24 8 8 24M8 8l16 16"/>
+    </symbol>
+    <symbol id="arrow-right" width="8" height="14" fill="none">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 13 6-6-6-6"/>/>
     </symbol>
   </defs>
 </svg>

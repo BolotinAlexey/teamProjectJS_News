@@ -8,10 +8,21 @@ body.isDark {
     right: 0;
   }
   .moon {
-    color: $accent-color;
+    color: $theme-accent-color;
   }
   .sun {
     color: $theme-switcher-color;
+  }
+}
+
+.current {
+  background-color: $accent-color;
+  color: $main-color;
+  .menu__arrow {
+    stroke: currentColor;
+  }
+  .menu__thumb {
+    border: 1px solid $main-color;
   }
 }
 
@@ -58,6 +69,7 @@ body.isDark {
   border: 1px solid currentColor;
   border-radius: 15px;
   opacity: 0;
+  outline: none;
   &.js-search-active {
     opacity: 1;
     ~ .search__btn {
@@ -100,18 +112,13 @@ body.isDark {
 //--------- MENU ----------
 
 .menu {
-  //   overflow: hidden;
-  //   @extend %absolute-centerY;
-  //   transform: translate(0%, -50%);
   position: absolute;
   top: 0;
   width: 100vw;
   height: 100vh;
-  padding: 0 $padding 18px;
   transition: transform 1s linear;
   background-color: $light-theme;
   &.is-hidden {
-    // @extend %visually-hidden;
     transform: translateY(-100%);
   }
 
@@ -123,8 +130,12 @@ body.isDark {
   }
 }
 
+.left-right-paddings {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
 .menu__container {
-  //   height: 568px;
 }
 
 .menu__header {
@@ -143,23 +154,51 @@ body.isDark {
   margin-bottom: 24px;
   padding-top: 6px;
   padding-bottom: 6px;
-  //   width: 100%;
-  //   background-color: $accent-color;
 }
+
 .menu__link {
-  display: block;
+  display: flex;
+  align-items: center;
+}
+
+.menu__thumb {
+  width: 32px;
+  height: 32px;
+  @extend %flex-center;
+  border-radius: 50%;
+  background-color: $accent-color;
+}
+.menu__item__icon {
+  fill: $accent-color;
+  stroke: $main-color;
+}
+.menu__text {
+  //   display: block;
   font-family: 'Manrope';
   @include font(16px, 1.375, 500);
+  margin-left: 14px;
+}
+
+.thumb-arrow {
+  position: relative;
+  width: 100%;
+}
+.menu__arrow {
+  position: absolute;
+  right: $padding;
+  fill: transparent;
 }
 
 // ---------SWITCHER----------
 .switcher {
+  padding-bottom: 18px;
 }
 
 .switcher__thumb {
   display: inline-block;
   vertical-align: middle;
 }
+
 .switcher__thumb:nth-of-type(2) {
   position: relative;
   width: 40px;
@@ -168,6 +207,7 @@ body.isDark {
   border-radius: 10px;
   cursor: pointer;
 }
+
 .disc {
   @extend %absolute-centerY;
   width: 16px;
@@ -175,9 +215,11 @@ body.isDark {
   background-color: $accent-color;
   border-radius: 50%;
 }
+
 .moon {
   color: $theme-switcher-color;
 }
+
 .sun {
-  color: $accent-color;
+  color: $theme-accent-color;
 }

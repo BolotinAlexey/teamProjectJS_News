@@ -1,6 +1,8 @@
 import { ref } from './header/refFunHeader';
 import onClikSearchBtn from './header/onClikSearchBtn';
 import onClickSwitcher from './header/onClickSwitcher';
+
+// ------- HEADER MAIN SCRIPT ---------
 export default function jsScriptHeader() {
   ref.btnSearch.addEventListener('click', onClikSearchBtn);
 
@@ -12,7 +14,12 @@ export default function jsScriptHeader() {
     ref.menu.classList.add('is-hidden')
   );
 
-  ref.switcher.addEventListener('click', () =>
-    ref.body.classList.toggle('isDark')
-  );
+  // ---- switch handler binder ------
+
+  const isDark = localStorage.getItem('isDark') || '';
+  if (isDark) ref.body.classList.add('isDark');
+
+  const onClickSwitcherBinder = onClickSwitcher.bind(this, ref.body);
+
+  ref.switcher.addEventListener('click', onClickSwitcherBinder);
 }
