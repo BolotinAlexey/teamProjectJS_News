@@ -5,7 +5,13 @@ body {
   font-weight: 400;
   font-size: 12px;
   line-height: 0.74;
-  //   color: $main-color;
+  transition: color 0.25s linear;
+}
+
+a,
+input,
+button {
+  color: inherit;
 }
 
 a {
@@ -30,7 +36,7 @@ button {
 }
 
 .icon {
-  color: currentColor;
+  fill: currentColor;
   stroke: currentColor;
 }
 

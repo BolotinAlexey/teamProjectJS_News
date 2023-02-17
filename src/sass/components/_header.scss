@@ -1,4 +1,20 @@
 // HEADER
+body.isDark {
+  .menu,
+  .search__input {
+    background-color: $dark-theme;
+  }
+  .disc {
+    right: 0;
+  }
+  .moon {
+    color: $accent-color;
+  }
+  .sun {
+    color: $theme-switcher-color;
+  }
+}
+
 .header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
@@ -15,7 +31,7 @@
 
 .logo {
   @include font(24px, 1.375, 700);
-  color: $dark-theme;
+  //   color: $dark-theme;
 }
 
 .nav {
@@ -28,7 +44,7 @@
 
 .nav__link {
   @include font(18px, 1.39, 700);
-  color: $dark-theme;
+  //   color: $dark-theme;
 }
 .search {
   width: 171px;
@@ -39,7 +55,7 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  border: 1px solid $dark-theme;
+  border: 1px solid currentColor;
   border-radius: 15px;
   opacity: 0;
   &.js-search-active {
@@ -73,7 +89,7 @@
 
 .menu__btn-burger {
   //   position: absolute;
-  color: $dark-theme;
+  //   color: $dark-theme;
   &.js-open {
     position: fixed;
   }
@@ -134,9 +150,6 @@
   display: block;
   font-family: 'Manrope';
   @include font(16px, 1.375, 500);
-  color: $dark-theme;
-
-  //   color: #f4f4f4;
 }
 
 // ---------SWITCHER----------
@@ -153,6 +166,7 @@
   height: 20px;
   border: 1px solid $accent-color;
   border-radius: 10px;
+  cursor: pointer;
 }
 .disc {
   @extend %absolute-centerY;
@@ -160,5 +174,10 @@
   height: 16px;
   background-color: $accent-color;
   border-radius: 50%;
-  right: 0;
+}
+.moon {
+  color: $theme-switcher-color;
+}
+.sun {
+  color: $accent-color;
 }
