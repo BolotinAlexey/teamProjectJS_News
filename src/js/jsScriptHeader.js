@@ -21,5 +21,7 @@ export default function jsScriptHeader() {
 
   const onClickSwitcherBinder = onClickSwitcher.bind(this, ref.body);
 
-  ref.switcher.addEventListener('click', onClickSwitcherBinder);
+  for (const el of ref.switcher) {
+    el.addEventListener('click', onClickSwitcherBinder);
+  }
 }

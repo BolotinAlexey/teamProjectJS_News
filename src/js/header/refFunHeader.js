@@ -5,5 +5,5 @@ export const ref = {
   burger: document.querySelector('.menu__btn-burger'),
   cross: document.querySelector('.menu__btn-cross'),
   menu: document.querySelector('.menu'),
-  switcher: document.querySelector('.js-switcher'),
+  switcher: document.querySelectorAll('.js-switcher'),
 };

@@ -13,6 +13,13 @@ body.isDark {
   .sun {
     color: $theme-switcher-color;
   }
+  .switcher__thumb:nth-of-type(2) {
+    border-color: $light-theme;
+    background-color: $theme-accent-color;
+  }
+  .disc {
+    background-color: $light-theme;
+  }
 }
 
 .current {
@@ -38,29 +45,59 @@ body.isDark {
   justify-content: space-between;
   padding-top: 24px;
   padding-bottom: 24px;
+  @include tablet() {
+    align-items: baseline;
+  }
 }
 
 .logo {
   @include font(24px, 1.375, 700);
-  //   color: $dark-theme;
+  @include tablet() {
+    font-size: 32px;
+  }
+  @include desktop() {
+    font-size: 42px;
+  }
 }
 
 .nav {
   display: none;
+  @include tablet() {
+    display: block;
+  }
 }
 
 .nav__list {
-  //   display: flex;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  //   gap: 44px;
+  //   @include desktop() {
+  //     gap: 69px;
+  //   }
+}
+
+.nav__item {
 }
 
 .nav__link {
-  @include font(18px, 1.39, 700);
-  //   color: $dark-theme;
+  padding: 16px 22px 8px;
+  @include font(16px, 1.375, 700);
+  @include desktop() {
+    @include font(18px, 1.39, 700);
+  }
 }
 .search {
-  width: 171px;
+  width: 173px;
   height: 31px;
   position: relative;
+  @include tablet() {
+    width: 213px;
+    // padding: 12px 0 3px;
+    @include desktop() {
+      width: 288px;
+    }
+  }
 }
 .search__input {
   width: 100%;
@@ -77,19 +114,36 @@ body.isDark {
       left: 6px;
     }
   }
+  @include tablet() {
+    opacity: 1;
+  }
 
   &::placeholder {
     transform: translateX(-15%);
     font-family: 'Poppins';
-    @include font(12px, 1.75, 400);
+    @include font(12px, 1.75);
     letter-spacing: 0.02em;
     opacity: 0.4;
+    @include tablet() {
+      @include font(14px, 1.71);
+    }
+  }
+}
+
+.menu__btn-burger {
+  @include tablet() {
+    display: none;
   }
 }
 
 .search__btn {
   @extend %absolute-centerY;
   right: 0;
+  @include tablet() {
+    opacity: 1;
+    right: auto;
+    left: 6px;
+  }
 }
 .search__icon {
   @extend %absolute-centerY;
@@ -98,7 +152,12 @@ body.isDark {
 .checkbox {
   display: none;
 }
-
+.switcher-tablet {
+  display: none;
+  @include tablet() {
+    display: block;
+  }
+}
 .menu__btn-burger {
   //   position: absolute;
   //   color: $dark-theme;
@@ -118,6 +177,9 @@ body.isDark {
   height: 100vh;
   transition: transform 1s linear;
   background-color: $light-theme;
+  @include tablet() {
+    display: none;
+  }
   &.is-hidden {
     transform: translateY(-100%);
   }
@@ -133,6 +195,10 @@ body.isDark {
 .left-right-paddings {
   padding-left: $padding;
   padding-right: $padding;
+  //   @include tablet() {
+  //     padding-left: 0;
+  //     padding-right: 0;
+  //   }
 }
 
 .menu__container {
@@ -192,6 +258,9 @@ body.isDark {
 // ---------SWITCHER----------
 .switcher {
   padding-bottom: 18px;
+  @include tablet() {
+    padding: 0;
+  }
 }
 
 .switcher__thumb {
@@ -203,9 +272,12 @@ body.isDark {
   position: relative;
   width: 40px;
   height: 20px;
+  margin-left: 6px;
+  margin-right: 6px;
   border: 1px solid $accent-color;
   border-radius: 10px;
   cursor: pointer;
+  background-color: $light-theme;
 }
 
 .disc {
