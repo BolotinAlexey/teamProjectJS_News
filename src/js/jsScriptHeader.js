@@ -1,10 +1,13 @@
 import { ref } from './header/refFunHeader';
+import onSearchSubmit from './onSearchSubmit';
 import onClikSearchBtn from './header/onClikSearchBtn';
 import onClickSwitcher from './header/onClickSwitcher';
 
 // ------- HEADER MAIN SCRIPT ---------
 export default function jsScriptHeader() {
-  ref.btnSearch.addEventListener('click', onClikSearchBtn);
+  ref.formSearch.addEventListener('submit', onSearchSubmit);
+
+  ref.btnSearchInput.addEventListener('click', onClikSearchBtn);
 
   ref.burger.addEventListener('click', () =>
     ref.menu.classList.remove('is-hidden')

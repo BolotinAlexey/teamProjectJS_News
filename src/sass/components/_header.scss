@@ -20,16 +20,24 @@ body.isDark {
   .disc {
     background-color: $light-theme;
   }
+  .header {
+    border-bottom: 1px solid rgba(244, 244, 244, 0.2);
+  }
 }
 
 .current {
-  background-color: $accent-color;
-  color: $main-color;
+  &.menu__item {
+    background-color: $accent-color;
+    color: $main-color;
+  }
   .menu__arrow {
     stroke: currentColor;
   }
   .menu__thumb {
     border: 1px solid $main-color;
+  }
+  .nav__link {
+    border-bottom: 2px solid $accent-color;
   }
 }
 
@@ -50,6 +58,7 @@ body.isDark {
   }
 }
 
+// -------- logo ---------
 .logo {
   @include font(24px, 1.375, 700);
   @include tablet() {
@@ -60,6 +69,7 @@ body.isDark {
   }
 }
 
+// --------- navigation ---------
 .nav {
   display: none;
   @include tablet() {
@@ -71,22 +81,24 @@ body.isDark {
   display: flex;
   justify-content: space-between;
   padding-left: 0;
-  //   gap: 44px;
-  //   @include desktop() {
-  //     gap: 69px;
-  //   }
+  gap: 32px;
+  @include desktop() {
+    gap: 57px;
+  }
 }
 
 .nav__item {
 }
 
 .nav__link {
-  padding: 16px 22px 8px;
+  padding: 16px 6px 8px;
   @include font(16px, 1.375, 700);
   @include desktop() {
     @include font(18px, 1.39, 700);
   }
 }
+
+// ------- search --------
 .search {
   width: 173px;
   height: 31px;
@@ -99,23 +111,25 @@ body.isDark {
     }
   }
 }
-.search__input {
+
+.search__form {
   width: 100%;
   height: 100%;
-  text-align: center;
-  border: 1px solid currentColor;
-  border-radius: 15px;
-  opacity: 0;
-  outline: none;
-  &.js-search-active {
-    opacity: 1;
-    ~ .search__btn {
-      right: auto;
-      left: 6px;
-    }
-  }
+  display: none;
   @include tablet() {
-    opacity: 1;
+    display: block;
+  }
+  &.js-search-active {
+    display: block;
+  }
+
+  .search__input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border: 1px solid currentColor;
+    border-radius: 15px;
+    outline: none;
   }
 
   &::placeholder {
@@ -136,37 +150,35 @@ body.isDark {
   }
 }
 
-.search__btn {
+.search__btn-submit {
+  @extend %absolute-centerY;
+  left: 6px;
+}
+.search__btn-input {
+  &.js-search-active {
+    display: none;
+  }
   @extend %absolute-centerY;
   right: 0;
   @include tablet() {
-    opacity: 1;
-    right: auto;
-    left: 6px;
+    display: none;
   }
 }
 .search__icon {
   @extend %absolute-centerY;
 }
 
-.checkbox {
-  display: none;
-}
 .switcher-tablet {
   display: none;
   @include tablet() {
     display: block;
   }
 }
-.menu__btn-burger {
-  //   position: absolute;
-  //   color: $dark-theme;
-  &.js-open {
-    position: fixed;
-  }
-  &__icon {
-  }
-}
+// .menu__btn-burger {
+//   &.js-open {
+//     position: fixed;
+//   }
+// }
 
 //--------- MENU ----------
 
@@ -175,7 +187,7 @@ body.isDark {
   top: 0;
   width: 100vw;
   height: 100vh;
-  transition: transform 1s linear;
+  transition: transform 0.25s linear;
   background-color: $light-theme;
   @include tablet() {
     display: none;
@@ -278,6 +290,10 @@ body.isDark {
   border-radius: 10px;
   cursor: pointer;
   background-color: $light-theme;
+  @include desktop() {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
 }
 
 .disc {
@@ -294,4 +310,18 @@ body.isDark {
 
 .sun {
   color: $theme-accent-color;
+}
+
+.switcher__icon {
+  @include desktop() {
+    display: none;
+  }
+}
+.switcher__text {
+  display: none;
+  font-family: 'Poppins';
+  @include font(18px, 1.33, 400);
+  @include desktop() {
+    display: inline-block;
+  }
 }

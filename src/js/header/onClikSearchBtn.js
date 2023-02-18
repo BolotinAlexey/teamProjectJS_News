@@ -3,5 +3,4 @@ export default function onClikSearchBtn(e) {
     'js-search-active'
   );
   e.currentTarget.classList.add('js-search-active');
-  //   console.log(e.currentTarget);
 }

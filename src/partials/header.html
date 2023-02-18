@@ -1,24 +1,41 @@
+<!----------- HEADER ----------->
 <header class="header">
   <div class="container header__container">
-    <span class="logo">News</span>
+    <a href="./index.html" class="logo">
+      <span class="logo__text">News</span>
+    </a>
+
+    <!----------- navigation ----------->
     <nav class="nav">
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="http://">Home</a></li>
-        <li class="nav__item">
-          <a class="nav__link" href="http://">Favorite</a>
+        <li class="nav__item current">
+          <a class="nav__link" href="./index.html">Home</a>
         </li>
-        <li class="nav__item"><a class="nav__link" href="http://">Read</a></li>
+        <li class="nav__item">
+          <a class="nav__link" href="./index.html">Favorite</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="./index.html">Read</a>
+        </li>
       </ul>
     </nav>
+
+    <!------------- form search ------------->
     <div class="search">
-      <input
-        class="search__input"
-        type="search"
-        placeholder="Search"
-        name=""
-        id=""
-      />
-      <button class="search__btn">
+      <form class="search__form">
+        <input
+          class="search__input"
+          type="search"
+          name="word"
+          placeholder="Search"
+        />
+        <button type="submit" class="search__btn-submit">
+          <svg class="search__icon icon" width="15" height="15">
+            <use href="./images/sprite.svg#search"></use>
+          </svg>
+        </button>
+      </form>
+      <button class="search__btn-input">
         <svg class="search__icon icon" width="15" height="15">
           <use href="./images/sprite.svg#search"></use>
         </svg>
@@ -26,9 +43,10 @@
     </div>
 
     <!------- switcher ------->
-    <div class="switcher switcher-tablet left-right-paddings">
+    <div class="switcher switcher-tablet">
       <div class="switcher__thumb sun">
-        <svg class="icon" width="18" height="18">
+        <span class="switcher__text">Light</span>
+        <svg class="icon switcher__icon" width="18" height="18">
           <use href="./images/sprite.svg#sun"></use>
         </svg>
       </div>
@@ -36,12 +54,14 @@
         <div class="disc"></div>
       </div>
       <div class="switcher__thumb moon">
-        <svg class="icon" width="16" height="16">
+        <span class="switcher__text">Dark</span>
+        <svg class="icon switcher__icon" width="16" height="16">
           <use href="./images/sprite.svg#moon"></use>
         </svg>
       </div>
     </div>
 
+    <!-------- burger ------->
     <button class="menu__btn-burger">
       <svg class="menu__icon icon" width="24" height="24">
         <use href="./images/sprite.svg#menu"></use>
@@ -50,21 +70,25 @@
   </div>
 </header>
 
-<!--------- mobile menu ---------->
+<!------------------ mobile menu ----------------->
 <div class="menu is-hidden">
   <div class="menu__container">
     <div class="menu-top">
       <div class="menu__header left-right-paddings">
-        <span class="logo">News</span>
+        <a href="./index.html" class="logo">
+          <span class="logo__text">News</span>
+        </a>
+
         <button class="menu__btn-cross">
           <svg class="menu__icon-cross icon" width="24" height="24">
             <use href="./images/sprite.svg#x"></use>
           </svg>
         </button>
       </div>
+      <!---- navigation mobile-menu ---->
       <ul class="menu__nav">
         <li class="menu__item left-right-paddings current">
-          <a href="" class="menu__link">
+          <a href="./index.html" class="menu__link">
             <div class="menu__thumb">
               <svg class="menu__item__icon" width="18" height="18">
                 <use href="./images/sprite.svg#home"></use>
@@ -78,7 +102,7 @@
           </a>
         </li>
         <li class="menu__item left-right-paddings">
-          <a class="menu__link">
+          <a href="./index.html" class="menu__link">
             <div class="menu__thumb">
               <svg class="menu__item__icon" width="18" height="18">
                 <use href="./images/sprite.svg#heart"></use>
@@ -91,7 +115,7 @@
           </a>
         </li>
         <li class="menu__item left-right-paddings">
-          <a href="" class="menu__link">
+          <a href="./index.html" class="menu__link">
             <div class="menu__thumb">
               <svg class="menu__item__icon" width="18" height="18">
                 <use href="./images/sprite.svg#book-open"></use>
@@ -107,7 +131,7 @@
       </ul>
     </div>
 
-    <!------- switcher ------->
+    <!------- switcher mobile-menu ------->
     <div class="switcher left-right-paddings">
       <div class="switcher__thumb sun">
         <svg class="icon" width="18" height="18">
