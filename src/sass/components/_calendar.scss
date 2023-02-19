@@ -1,0 +1,9 @@
+// ------------- calendar --------------
+
+.calendar__input {
+  width: 152px;
+  height: 31px;
+  @include tablet() {
+    width: 168px;
+  }
+}

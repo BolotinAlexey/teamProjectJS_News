@@ -1,7 +1,40 @@
-import defineSizesWindow from ('./categories/defineSizesWindow');
-import definecountCategories from ('./categories/defineCountCategories');
+import defineSizesWindow from './categories/defineSizesWindow';
+import defineCountCategories from './categories/defineCountCategories';
+import createStringList from './categories/createStringList';
+import { ref } from './categories/refCaregories';
+import ApiNews from './apiNews';
 
-export default function categores(params) {
+const CATEGORIES_LENGTH = 20;
+
+export default function categores() {
+  // stringList = createStringList(countCategories);
+  const news = new ApiNews();
+  handlerCetegories(news);
+}
+
+// doing for resize or reload
+function handlerCetegories(news) {
+  // format returning from localStorage: "item1,item2,..."
+  const categList = localStorage.getItem('categList')?.split(',') || [];
+  if (categList.length < CATEGORIES_LENGTH)
+    getCategories(news, categList).then(list =>
+      createListManager(list, ref.list)
+    );
+  else createListManager(categList, ref.list);
+}
+
+async function getCategories(news, list) {
+  const arrCategCommon = await news.categories;
+  arrCategCommon.length = CATEGORIES_LENGTH - list.length;
+  const arrCateg = arrCategCommon.map(el => el.display_name);
+
+  localStorage.setItem('categList', arrCateg);
+  return arrCateg;
+}
+
+function createListManager(list, refer) {
   const { windowWidth, windowHeight } = defineSizesWindow();
   const countCategories = defineCountCategories(windowWidth);
+  if (countCategories === 1) {
+  }
 }
