@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 14px;
+  max-width: 790px;
   @include desktop() {
     gap: 21px;
   }
@@ -71,7 +72,6 @@
 }
 
 .categories__btn {
-  min-width: 67px;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -79,8 +79,8 @@
 
   //   text-align: center;
   @include tablet() {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   &-drop {
