@@ -2,12 +2,15 @@ import defineSizesWindow from './categories/defineSizesWindow';
 import defineCountCategories from './categories/defineCountCategories';
 import createStringList from './categories/createStringList';
 import createDropList from './categories/createDropList';
+import onDrop from './categories/onDrop';
+import onDropParent from './categories/onDropParent';
 import { ref } from './categories/refCaregories';
 import ApiNews from './apiNews';
 import CATEGORIES_LENGTH from './constants';
 
 export default function categores() {
-  // stringList = createStringList(countCategories);
+  ref.drop.addEventListener('click', onDrop);
+  ref.arrBtns.forEach(el => el.addEventListener('click', onDropParent));
   const news = new ApiNews();
   handlerCetegories(news);
 }
@@ -20,7 +23,7 @@ function handlerCetegories(news) {
     getCategories(news, categList).then(list =>
       createListManager(list, ref.list)
     );
-  else createListManager(categList, ref.list);
+  else createListManager(categList);
 }
 
 async function getCategories(news, list) {
@@ -32,10 +35,8 @@ async function getCategories(news, list) {
   return arrCateg;
 }
 
-function createListManager(list, refer) {
+function createListManager(list) {
   const { windowWidth, windowHeight } = defineSizesWindow();
   const countCategories = defineCountCategories(windowWidth);
-  if (countCategories === 1) {
-    const stringList = createDropList(list, 'Categories');
-  }
+  createDropList(list);
 }
