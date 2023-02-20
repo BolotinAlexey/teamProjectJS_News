@@ -8,3 +8,16 @@
   display: flex;
   justify-content: space-between;
 }
+
+.categories__mobile {
+  @include tablet() {
+    display: none;
+  }
+}
+
+.categories__tablet {
+  display: none;
+  @include tablet() {
+    display: inline;
+  }
+}

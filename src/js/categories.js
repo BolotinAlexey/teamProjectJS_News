@@ -1,10 +1,10 @@
 import defineSizesWindow from './categories/defineSizesWindow';
 import defineCountCategories from './categories/defineCountCategories';
 import createStringList from './categories/createStringList';
+import createDropList from './categories/createDropList';
 import { ref } from './categories/refCaregories';
 import ApiNews from './apiNews';
-
-const CATEGORIES_LENGTH = 20;
+import CATEGORIES_LENGTH from './constants';
 
 export default function categores() {
   // stringList = createStringList(countCategories);
@@ -36,5 +36,6 @@ function createListManager(list, refer) {
   const { windowWidth, windowHeight } = defineSizesWindow();
   const countCategories = defineCountCategories(windowWidth);
   if (countCategories === 1) {
+    const stringList = createDropList(list, 'Categories');
   }
 }
