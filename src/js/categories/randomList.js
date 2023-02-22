@@ -1,6 +1,5 @@
 import { CATEGORIES_LENGTH } from '../constants';
 export default function randomList(list) {
-  console.log(list);
   const set = new Set();
   if (CATEGORIES_LENGTH > list.length) {
     console.error(

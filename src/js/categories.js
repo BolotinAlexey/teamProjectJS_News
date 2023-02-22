@@ -1,18 +1,15 @@
-import defineSizesWindow from './categories/defineSizesWindow';
-import defineCountCategories from './categories/defineCountCategories';
-import createStringList from './categories/createStringList';
 import createDropList from './categories/createDropList';
 import onDrop from './categories/onDrop';
-import onDropParent from './categories/onDropParent';
+import onClikCategories from './categories/onClikCategories';
 import randomList from './categories/randomList';
 import { ref } from './categories/refCaregories';
-import ApiNews from './apiNews';
-import CATEGORIES_LENGTH from './constants';
 
-export default function categores() {
+export default function categores(news) {
+  const bindOnClikCategories = onClikCategories.bind(this, news);
+
   ref.drop.addEventListener('click', onDrop);
-  ref.arrBtns.forEach(el => el.addEventListener('click', onDropParent));
-  const news = new ApiNews();
+  ref.list.addEventListener('click', bindOnClikCategories);
+
   handlerCetegories(news);
 }
 
